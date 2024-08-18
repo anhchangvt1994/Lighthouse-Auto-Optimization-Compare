@@ -1,0 +1,48 @@
+<script setup lang="ts">
+	import { faCircleInfo } from '@fortawesome/free-solid-svg-icons'
+	import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+	const { isModal } = defineProps<{
+		isModal?: boolean
+	}>()
+</script>
+
+<template>
+	<div
+		:class="`p-4 text-blue-800 border border-blue-300 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 dark:border-blue-800 max-w-[640px]${
+			isModal ? ' ' + 'relative translate-y-[-50%] top-[35%]' : ''
+		}`"
+		role="alert"
+	>
+		<div class="flex items-center">
+			<FontAwesomeIcon
+				class="text-blue-800 mr-4"
+				:icon="faCircleInfo"
+				size="lg"
+			/>
+			<h3 class="text-lg font-medium">Introduction</h3>
+		</div>
+		<p class="mt-2 mb-4 text-sm">
+			<span class="font-semibold">Lighthouse Auto Optimization Compare</span>
+			is a tool that helps compare any website with its optimized version,
+			providing the clearest insight into the potential of the website when
+			optimized. It also introduces users to an automatic optimization tool that
+			helps achieve the best evaluations for the website from various search
+			engines.
+		</p>
+		<p class="mt-2 mb-4 last:mb-0 text-sm">
+			<span class="font-bold">Note:</span>The evaluation results are provided by
+			the public API from Google PageSpeed Insights, which is used to assess
+			important criteria for optimizing search rankings on search engines.
+		</p>
+		<div v-if="isModal" class="flex">
+			<button
+				type="button"
+				class="text-blue-800 bg-transparent border border-blue-800 hover:bg-blue-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-200 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:hover:bg-blue-600 dark:border-blue-600 dark:text-blue-400 dark:hover:text-white dark:focus:ring-blue-800"
+				aria-label="Close"
+				@click="() => $emit('close')"
+			>
+				Dismiss
+			</button>
+		</div>
+	</div>
+</template>
