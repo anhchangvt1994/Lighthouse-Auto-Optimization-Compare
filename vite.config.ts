@@ -33,8 +33,6 @@ export default defineConfig(async ({ mode }) => {
 	const aliasExternal = ViteConfigWithMode?.aliasExternal ?? {}
 
 	return {
-		base:
-			mode === 'production' ? '/lighthouse-auto-optimization-compare/' : '/',
 		publicDir: 'src/assets/static',
 		plugins: [
 			vue({
