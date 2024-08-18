@@ -3,8 +3,8 @@ const __vite__mapDeps = (
 	m = __vite__mapDeps,
 	d = m.f ||
 		(m.f = [
-			'App.BfcUkMu4.js',
-			'56db8704.BVC0cuc_.js',
+			'App.pBZ2NOL0.js',
+			'56db8704.hA6-2NM5.js',
 			'243eee37.Djs3w04v.js',
 			'4926cbbd.OBblNUmn.js',
 			'3d7b9f36.DOV-U9Tm.js',
@@ -15,7 +15,7 @@ const __vite__mapDeps = (
 			'App-CdpURB_r.css',
 		])
 ) => i.map((i) => d[i])
-import { _ as e, r as t } from './56db8704.BVC0cuc_.js'
+import { _ as e, r as t } from './56db8704.hA6-2NM5.js'
 import {
 	f as r,
 	k as s,
@@ -108,7 +108,7 @@ const p = ['href', 'onClick'],
 ;(() => ({
 	init() {
 		e(
-			() => import('./App.BfcUkMu4.js'),
+			() => import('./App.pBZ2NOL0.js'),
 			__vite__mapDeps([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
 		).then(function (e) {
 			e &&

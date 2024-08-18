@@ -17,7 +17,7 @@ const __vite__mapDeps = (
 			'335a9f88.Dc9B77x0.js',
 			'227115db.dSAOzloW.js',
 			'index-CzZ4PPTr.css',
-			'NotFoundPage.CkQ_kbSJ.js',
+			'NotFoundPage.3Us5-3ii.js',
 			'4926cbbd.OBblNUmn.js',
 			'3d7b9f36.DOV-U9Tm.js',
 			'970a3896.BtY7TgxR.js',
@@ -40,7 +40,7 @@ const i = {},
 				t.map((e) => {
 					if (
 						(e = (function (e) {
-							return '/lighthouse-auto-optimization-compare/' + e
+							return '/Lighthouse-Auto-Optimization-Compare/' + e
 						})(e)) in i
 					)
 						return
@@ -124,7 +124,7 @@ const f = l(m, [
 			path: '/:pathMatch(.*)*',
 			component: h(() =>
 				c(
-					() => import('./NotFoundPage.CkQ_kbSJ.js'),
+					() => import('./NotFoundPage.3Us5-3ii.js'),
 					__vite__mapDeps([14, 1, 15, 16, 17, 12])
 				)
 			),
