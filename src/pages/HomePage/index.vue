@@ -8,7 +8,7 @@
 	import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 	import { useQueryGetPageSpeedInfo } from 'app/apis/pagespeed'
 	import { IPageSpeedItemInfoCustom } from 'app/apis/pagespeed/types'
-	import PageSpeedAnimation from 'assets/static/images/json/pagespeed.json'
+	import PageSpeedAnimation from 'assets/json/pagespeed.json'
 	import { useToastList } from 'components/ToastList/composable/useToastList'
 	import ToastList from 'components/ToastList/index.vue'
 	import { LottieAnimation } from 'lottie-web-vue'
@@ -151,33 +151,25 @@
 							class="text-blue-800 cursor-pointer"
 							@click="() => (isShowInfoModal = true)"
 							:icon="faCircleInfo"
-							:size="'lg'"
+							size="lg"
 						/>
 						<FontAwesomeIcon
 							class="text-green-800 cursor-pointer"
 							@click="() => (isShowUsageModal = true)"
 							:icon="faCircleQuestion"
-							:size="'lg'"
+							size="lg"
 						/>
 					</div>
 				</div>
 
-				<div class="text-center text-md pb-5">
-					<div class="relative z-0 inline-block">
-						Zero waste time, Zero waste effort, Zero waste money. But still get
-						the best Lighthouse score
-						<span
-							class="block absolute w-[12px] h-[12px] -top-[6px] -left-3 -z-10 border-blue-500 border-t-[3px] border-l-[3px]"
-						/>
-						<span
-							class="block absolute w-[12px] h-[12px] -top-[6px] -right-3 -z-10 border-blue-500 border-t-[3px] border-r-[3px]"
-						/>
-						<span
-							class="block absolute w-[12px] h-[12px] -bottom-[6px] -right-3 -z-10 border-blue-500 border-b-[3px] border-r-[3px]"
-						/>
-						<span
-							class="block absolute w-[12px] h-[12px] -bottom-[6px] -left-3 -z-10 border-blue-500 border-b-[3px] border-l-[3px]"
-						/>
+				<div class="text-center text-md pb-4">
+					<div
+						class="mobile:text-xs relative z-0 inline-block text-gray-500 text-[12px]"
+					>
+						No waste time, No waste effort, No waste money.
+						<span class="mobile:block"
+							>But still get the best Lighthouse score
+						</span>
 					</div>
 				</div>
 			</div>
@@ -200,10 +192,6 @@
 							v-bind="urlAttrs"
 							:disabled="isFetching"
 						/>
-						<!-- <div
-							v-if="isFetching"
-							class="absolute left-0 top-0 w-full h-full bg-white bg-opacity-70"
-						/> -->
 					</div>
 					<div class="absolute top-0 right-0 h-full py-[2px]">
 						<button
@@ -225,7 +213,7 @@
 										>Loading...</span
 									>
 								</div>
-								<font-awesome-icon v-else :icon="faGaugeHigh" :size="'xl'" />
+								<font-awesome-icon v-else :icon="faGaugeHigh" size="xl" />
 							</span>
 						</button>
 					</div>
@@ -322,7 +310,7 @@
 									)};
                   `"
 							>
-								<div class="pr-4">
+								<div class="flex pr-4 items-center">
 									<span
 										v-if="originalInfoList.info[index].score"
 										class="text-white font-bold"
@@ -330,8 +318,8 @@
 									>
 									<FontAwesomeIcon
 										v-else
+										class="mobile:text-lg text-2xl"
 										:icon="faCircleExclamation"
-										:size="'xl'"
 										:color="'#ff3333'"
 									/>
 								</div>
@@ -344,11 +332,11 @@
 							>
 								<FontAwesomeIcon
 									:icon="INIT_PAGE_SPEED_INFO.info[index].icon"
-									:size="'xl'"
+									size="lg"
 								/>
 							</span>
 							<span
-								class="font-semibold"
+								class="font-semibold mobile:font-bold"
 								v-bind="{
 									class: `${
 										INIT_PAGE_SPEED_INFO.info[index].icon
@@ -389,7 +377,7 @@
 									)};
                   `"
 							>
-								<div class="pl-4">
+								<div class="flex pl-4 items-center">
 									<span
 										v-if="optimalInfoList.info[index].score"
 										class="text-white font-bold"
@@ -397,8 +385,8 @@
 									</span>
 									<FontAwesomeIcon
 										v-else
+										class="mobile:text-lg text-2xl"
 										:icon="faCircleExclamation"
-										:size="'xl'"
 										:color="'#ff3333'"
 									/>
 								</div>
