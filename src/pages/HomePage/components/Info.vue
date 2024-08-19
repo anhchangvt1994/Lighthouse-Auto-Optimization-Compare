@@ -21,13 +21,34 @@
 			/>
 			<h3 class="text-lg font-medium">Introduction</h3>
 		</div>
-		<p class="mt-2 mb-4 text-sm">
+		<p class="mt-2 mb-2 text-sm">
 			<span class="font-semibold">Lighthouse Auto Optimization Compare</span>
 			is a tool that helps compare any website with its optimized version,
 			providing the clearest insight into the potential of the website when
 			optimized. It also introduces users to an automatic optimization tool that
 			helps achieve the best evaluations for the website from various search
 			engines.
+		</p>
+		<p class="mt-2 mb-2 text-sm">
+			The optimal information that this tool provides is supplied by the
+			<a
+				class="underline"
+				href="https://github.com/anhchangvt1994/vite-project-template-react__seo-web-scraping"
+				target="_blank"
+				>Web-scraping SEO boilerplate</a
+			>
+			project.
+		</p>
+		<p class="mt-2 mb-4 text-sm">
+			<a
+				class="underline"
+				href="https://github.com/anhchangvt1994/vite-project-template-react__seo-web-scraping"
+				target="_blank"
+				>Web-scraping SEO boilerplate</a
+			>
+			is built on the idea of developing a website that uses completely
+			client-side rendering, while still being SEO-friendly and compatible with
+			search engines.
 		</p>
 		<p class="mt-2 mb-4 last:mb-0 text-sm">
 			<span class="font-bold">Note:</span>The evaluation results are provided by

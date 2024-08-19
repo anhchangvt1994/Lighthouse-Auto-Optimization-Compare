@@ -136,8 +136,8 @@
 <template>
 	<div class="home-page w-full">
 		<div class="body">
-			<div class="flex justify-center">
-				<div class="relative">
+			<div class="flex flex-col">
+				<div class="relative justify-self-start self-center">
 					<img
 						class="w-[150px]"
 						src="/images/logo.png"
@@ -158,6 +158,25 @@
 							@click="() => (isShowUsageModal = true)"
 							:icon="faCircleQuestion"
 							:size="'lg'"
+						/>
+					</div>
+				</div>
+
+				<div class="text-center text-md pb-5">
+					<div class="relative z-0 inline-block">
+						Zero waste time, Zero waste effort, Zero waste money. But still get
+						the best Lighthouse score
+						<span
+							class="block absolute w-[12px] h-[12px] -top-[6px] -left-3 -z-10 border-blue-500 border-t-[3px] border-l-[3px]"
+						/>
+						<span
+							class="block absolute w-[12px] h-[12px] -top-[6px] -right-3 -z-10 border-blue-500 border-t-[3px] border-r-[3px]"
+						/>
+						<span
+							class="block absolute w-[12px] h-[12px] -bottom-[6px] -right-3 -z-10 border-blue-500 border-b-[3px] border-r-[3px]"
+						/>
+						<span
+							class="block absolute w-[12px] h-[12px] -bottom-[6px] -left-3 -z-10 border-blue-500 border-b-[3px] border-l-[3px]"
 						/>
 					</div>
 				</div>
