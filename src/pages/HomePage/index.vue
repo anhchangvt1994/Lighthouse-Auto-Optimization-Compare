@@ -276,13 +276,13 @@
 					<div
 						v-for="(item, index) in 4"
 						:key="index"
-						class="grid grid-cols-7 tablet:grid-cols-5 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
+						class="grid grid-cols-7 tablet:grid-cols-5 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] h-9"
 					>
 						<div
-							class="flex justify-end col-span-3 tablet:col-span-2 overflow-hidden"
+							class="flex justify-end col-span-3 tablet:col-span-2 h-[calc(100%+2px)] -mt-[1px] overflow-hidden"
 						>
 							<div
-								class="flex items-center justify-end w-0 h-9 width-percent-animation"
+								class="flex items-center justify-end w-0 h-full width-percent-animation"
 								:style="`
                   --widthPercent1:${
 										originalInfoList.info[index].scoreSpacePercent
@@ -347,9 +347,11 @@
 								>{{ optimalInfoList.info[index].title }}</span
 							>
 						</div>
-						<div class="flex col-span-3 tablet:col-span-2 overflow-hidden">
+						<div
+							class="flex col-span-3 tablet:col-span-2 h-[calc(100%+2px)] -mt-[1px] overflow-hidden"
+						>
 							<div
-								class="flex items-center w-0 h-9 width-percent-animation"
+								class="flex items-center w-0 h-full width-percent-animation"
 								:style="`
                   --widthPercent1:${
 										optimalInfoList.info[index].scoreSpacePercent

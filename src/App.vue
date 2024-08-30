@@ -5,7 +5,7 @@
 
 <template>
 	<div class="flex flex-col min-h-[100vh]">
-		<Header class="mb-4" />
+		<Header class="tablet:mb-4" />
 		<div class="main-container grow w-full">
 			<RouterView v-slot="{ Component }">
 				<template v-if="Component">
