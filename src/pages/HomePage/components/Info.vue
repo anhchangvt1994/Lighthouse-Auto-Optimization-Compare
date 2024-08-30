@@ -12,7 +12,7 @@
     ${
 			isModal
 				? ' ' +
-				  'relative translate-y-[-50%] top-[35%] mobile:flex mobile:max-h-[calc(100vh_-_120px)] mobile:top-[50%] mobile:flex-col'
+				  'relative translate-y-[-50%] top-[40%] mobile:flex mobile:max-h-[calc(100vh_-_35%)] mobile:top-[50%] mobile:flex-col'
 				: ''
 		}`"
 		role="alert"

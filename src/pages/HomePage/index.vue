@@ -58,7 +58,7 @@
 		if (!data.value || !data.value.optimal) return INIT_PAGE_SPEED_INFO
 		return {
 			pageSpeedUrl: data.value.optimal.pageSpeedUrl,
-			info: data.value.optimal.info
+			info: data.value.optimal.info.length
 				? data.value.optimal.info.map((item) => {
 						return {
 							...item,
