@@ -35,7 +35,7 @@
 		device: route.query.device || 'mobile',
 	}))
 
-	const { data, isFetching, isError, isSuccess, error, refetch } =
+	const { data, isFetching, error, refetch } =
 		useQueryGetPageSpeedInfo(queryParams)
 
 	const originalInfoList = computed<IPageSpeedItemInfoCustom>(() => {
@@ -43,11 +43,11 @@
 		return {
 			pageSpeedUrl: data.value.original.pageSpeedUrl,
 			info: data.value.original.info.length
-				? data.value.original.info.map((item, index) => {
+				? data.value.original.info.map((item) => {
 						return {
 							...item,
 							score: Math.floor(item.score),
-							scoreSpacePercent: Math.floor(item.score / 4),
+							scoreSpacePercent: Math.floor(item.score) / 4,
 						}
 				  })
 				: INIT_PAGE_SPEED_INFO.info,
@@ -95,6 +95,8 @@
 	const [url, urlAttrs] = defineField('url', {
 		validateOnBlur: false,
 		validateOnModelUpdate: false,
+		validateOnChange: false,
+		validateOnInput: false,
 	})
 
 	const onSubmit = handleSubmit((requestParams) => {
