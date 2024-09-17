@@ -35,7 +35,7 @@
 		device: route.query.device || 'mobile',
 	}))
 
-	const { data, isFetching, isError, isSuccess, refetch } =
+	const { data, isFetching, isError, isSuccess, error, refetch } =
 		useQueryGetPageSpeedInfo(queryParams)
 
 	const originalInfoList = computed<IPageSpeedItemInfoCustom>(() => {
@@ -119,6 +119,21 @@
 			})
 		}
 	})
+
+	watch(
+		error,
+		() => {
+			if (error.value && error.value.message) {
+				addToast({
+					type: 'error',
+					message: error.value.message,
+				})
+			}
+		},
+		{
+			immediate: false,
+		}
+	)
 
 	watch(
 		() => route.query,

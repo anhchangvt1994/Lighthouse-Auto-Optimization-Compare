@@ -1,10 +1,19 @@
 import { QueryFunction, useQuery } from '@tanstack/vue-query'
 import { IPageSpeedInfo } from './types'
 
+let isFistQuery = true
+
 const getPageSpeedInfo: QueryFunction<IPageSpeedInfo, any> = async ({
 	queryKey,
 }): Promise<IPageSpeedInfo> => {
-	if (!queryKey[1].url) throw new Error('Need provide url param!')
+	if (!queryKey[1].url) {
+		if (isFistQuery) {
+			isFistQuery = false
+			throw new Error()
+		} else {
+			throw new Error('URL is required!')
+		}
+	}
 
 	const queryString = new URLSearchParams({
 		...queryKey[1],
@@ -23,12 +32,12 @@ const getPageSpeedInfo: QueryFunction<IPageSpeedInfo, any> = async ({
 		)
 
 		if (!response.ok) {
-			throw new Error('Get PageSpeed info fail!')
+			throw new Error('Too many requests. Please try again later!')
 		}
 
 		return await response.json()
 	} catch (err) {
-		throw err
+		throw new Error('Too many requests. Please try again later!')
 	}
 }
 
@@ -39,5 +48,8 @@ export const useQueryGetPageSpeedInfo = (params) => {
 		staleTime: Infinity,
 		gcTime: 60000,
 		retry: false,
+		refetchOnMount: false,
+		refetchOnReconnect: false,
+		refetchOnWindowFocus: false,
 	})
 }
