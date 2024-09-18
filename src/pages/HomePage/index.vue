@@ -35,7 +35,7 @@
 		device: route.query.device || 'mobile',
 	}))
 
-	const { data, isFetching, error, refetch } =
+	const { data, isFetching, isError, isSuccess, error, refetch } =
 		useQueryGetPageSpeedInfo(queryParams)
 
 	const originalInfoList = computed<IPageSpeedItemInfoCustom>(() => {
@@ -63,7 +63,7 @@
 						return {
 							...item,
 							score: Math.floor(item.score),
-							scoreSpacePercent: Math.floor(item.score / 4),
+							scoreSpacePercent: Math.floor(item.score) / 4,
 						}
 				  })
 				: INIT_PAGE_SPEED_INFO.info,
@@ -108,7 +108,11 @@
 			query: { url: values.url },
 		})
 
-		if (!data.value?.original.info.length || !data.value?.optimal.info.length) {
+		if (
+			isError.value ||
+			(isSuccess.value &&
+				(!data.value?.original.info.length || !data.value?.optimal.info.length))
+		) {
 			refetch()
 		}
 	})
@@ -122,25 +126,19 @@
 		}
 	})
 
-	watch(
-		error,
-		() => {
-			if (error.value && error.value.message) {
-				addToast({
-					type: 'error',
-					message: error.value.message,
-				})
-			}
-		},
-		{
-			immediate: false,
+	watch(error, () => {
+		if (error.value && error.value.message) {
+			addToast({
+				type: 'error',
+				message: error.value.message,
+			})
 		}
-	)
+	})
 
 	watch(
-		() => route.query,
+		() => queryParams.value,
 		(newVal, oldVal) => {
-			if (!oldVal || newVal !== oldVal) {
+			if (newVal.url && newVal !== oldVal) {
 				refetch()
 			}
 		},
